@@ -21,4 +21,4 @@ questions = Question.create!([{body: 'Question_1', tests_id: 1},
 
 answers = Answer.create!([{body: 'Answer_1',correct: true, questions_id: 2},
                           {body: 'Answer_2',correct: true, questions_id: 1},
-                          {body: 'Answer_3',correct: false, questions_id: 1])
+                          {body: 'Answer_3',correct: false, questions_id: 1}])
