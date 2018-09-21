@@ -19,15 +19,15 @@ categories = Category.create!([{title: 'Category_1'},
                                {title: 'Category_4'},
                                {title: 'Category_5'}])
 
-tests = Test.create!([{title: 'Test_1', level: 2, categories_id: categories[0].id},
-                      {title: 'Test_2', level: 3, categories_id: categories[0].id},
-                      {title: 'Test_3', level: 2, categories_id: categories[1].id},
-                      {title: 'Test_4', level: 2, categories_id: categories[2].id},
-                      {title: 'Test_5', level: 2, categories_id: categories[3].id},
-                      {title: 'Test_6', level: 2, categories_id: categories[4].id},
-                      {title: 'Test_7', level: 2, categories_id: categories[4].id},
-                      {title: 'Test_8', level: 2, categories_id: categories[3].id},
-                      {title: 'Test_9', level: 2, categories_id: categories[2].id}])
+tests = Test.create!([{title: 'Test_1', level: 2, categories_id: categories[0].id, user_id: users[0]},
+                      {title: 'Test_2', level: 3, categories_id: categories[0].id, user_id: users[1]},
+                      {title: 'Test_3', level: 2, categories_id: categories[1].id, user_id: users[3]},
+                      {title: 'Test_4', level: 2, categories_id: categories[2].id, user_id: users[0]},
+                      {title: 'Test_5', level: 2, categories_id: categories[3].id, user_id: users[0]},
+                      {title: 'Test_6', level: 2, categories_id: categories[4].id, user_id: users[1]},
+                      {title: 'Test_7', level: 2, categories_id: categories[4].id, user_id: users[0]},
+                      {title: 'Test_8', level: 2, categories_id: categories[3].id, user_id: users[0]},
+                      {title: 'Test_9', level: 2, categories_id: categories[2].id, user_id: users[2]}])
 
 questions = Question.create!([{body: 'Question_1', tests_id: tests[1].id},
                               {body: 'Question_2', tests_id: tests[2].id},
