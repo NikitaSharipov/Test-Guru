@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_19_084147) do
+ActiveRecord::Schema.define(version: 2018_09_21_121006) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "correct", default: false, null: false
-    t.integer "questions_id"
+    t.integer "question_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["questions_id"], name: "index_answers_on_questions_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -28,29 +28,31 @@ ActiveRecord::Schema.define(version: 2018_09_19_084147) do
   end
 
   create_table "involved_tests", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "tests_id"
+    t.integer "user_id"
+    t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tests_id"], name: "index_involved_tests_on_tests_id"
-    t.index ["users_id"], name: "index_involved_tests_on_users_id"
+    t.index ["test_id"], name: "index_involved_tests_on_test_id"
+    t.index ["user_id"], name: "index_involved_tests_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "tests_id"
+    t.integer "test_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["tests_id"], name: "index_questions_on_tests_id"
+    t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 1
-    t.integer "categories_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_tests_on_categories_id"
+    t.integer "user_id"
+    t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
