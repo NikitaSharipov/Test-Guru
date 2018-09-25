@@ -5,9 +5,15 @@ class Test < ApplicationRecord
   has_many :involved_tests, dependent: :destroy
   has_many :users, through: :involved_tests
 
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
 
+  default_scope { order(created_at: :asc) }
 
-  def test_by_category (category)
-    Test.joins(:category).where(categories: {title: category}).order(title: :desc).pluck(:title)
-  end
+  scope :dificulty_easy, -> { where(level: 0..1) }
+  scope :dificulty_medium, -> { where(level: 2..4) }
+  scope :dificulty_hard, -> { where(level: 4..Float::INFINITY) }
+
+  scope :test_by_category, -> (category) { self.joins(:category).where(categories: {title: category}).pluck(:title) }
+
 end

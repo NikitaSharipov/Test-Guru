@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_21_121006) do
+ActiveRecord::Schema.define(version: 2018_09_25_115515) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_09_21_121006) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["level", "title"], name: "index_tests_on_level_and_title", unique: true
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
@@ -60,6 +61,8 @@ ActiveRecord::Schema.define(version: 2018_09_21_121006) do
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

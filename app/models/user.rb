@@ -4,8 +4,12 @@ class User < ApplicationRecord
   has_many :tests, through: :involved_tests
   has_many :own_tests, class_name: "Test", foreign_key: :user_id, dependent: :nullify
 
+  validates :email, presence: true
 
-  def test_by_lvl(level_input)
-    Test.where( level: level_input)
-  end
+  scope :test_by_lvl, -> (level_input) { Test.where(level: level_input) }
+
+
+#  def test_by_lvl(level_input)
+#    Test.where( level: level_input)
+#  end
 end
