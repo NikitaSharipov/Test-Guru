@@ -20,7 +20,6 @@ class QuestionsController < ApplicationController
   def create
 
     question = @test.questions.create(question_params)
-
     render plain: 'Question created'
   end
 
