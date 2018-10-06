@@ -10,7 +10,7 @@
 
 <p>
   <%= link_to 'Back', tests_path %>
-  <%= link_to 'New question', new_test_question_path(test_id: @test.id) %>
+  <%= link_to 'New question', new_test_question_path(@test) %>
 </p>
 
 
@@ -23,7 +23,7 @@
 
   <%= render @test.questions %>
 
-  <% unless @test.questions.present? %>
+  <% if @test.questions.blank? %>
     <th colspan="4">The test has no questions</th>
   <% end %>
 </table>

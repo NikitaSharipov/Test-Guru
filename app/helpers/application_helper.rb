@@ -5,7 +5,7 @@ module ApplicationHelper
   end
 
   def github_link (author, repo)
-    return "https://github.com/#{author}/#{repo}"
+    content_tag(:a, repo, href: "https://github.com/#{author}/#{repo}",target: '_blank')
   end
 
 end
