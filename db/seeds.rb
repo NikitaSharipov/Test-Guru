@@ -53,7 +53,7 @@ answers = Answer.create!([{body: 'Answer_1',correct: true, question: questions[1
                           {body: 'Answer_6',correct: false, question: questions[2]},
                           {body: 'Answer_7',correct: false, question: questions[0]}])
 
-involved_tests = InvolvedTest.create!([{user: users[1], test: tests[1]},
+test_passages = TestPassage.create!([{user: users[1], test: tests[1]},
                                        {user: users[2], test: tests[2]},
                                        {user: users[3], test: tests[3]},
                                        {user: users[4], test: tests[4]},
