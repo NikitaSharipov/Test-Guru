@@ -1,6 +1,6 @@
 <h1>The <%= @test_passage.test.title %> Test was completed!</h1>
 
-<% result = @test_passage.percent_more_85? ? 'success' : 'failure' %>
+<% result = @test_passage.success? ? 'success' : 'failure' %>
 <p>Процент правильных ответов:<span class = <%= result %> > <%= @test_passage.correct_answers_percent %>% </span></p>
 <p> "Result: " <%= result %> </p>
 
