@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+
+  get 'sessions/new'
+  get 'users/new'
+
+  root to: 'questions#index'
+
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+
+  resources :users, only: :create
+  resources :sessions, only: :create
   resources :answers
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   resources :tests do
     resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
@@ -17,5 +28,4 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'questions#index'
 end
