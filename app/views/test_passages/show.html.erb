@@ -14,3 +14,8 @@
 
   <p><%= form.submit 'Next' %></p>
 <% end %>
+
+<p> Номер текущего вопроса: <%= @test_passage.question_number %> </p>
+<p> Общее количество вопросов теста: <%= @test_passage.questions_count %> </p>
+<p> Количество правильных ответов на данный момент:<%= @test_passage.correct_question %> </p>
+

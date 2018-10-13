@@ -17,6 +17,6 @@
   <%= render @question.answers %>
 </ol>
 
-<%= link_to 'Back', test_questions_path(@question.test_id) %>
+<%= link_to 'Back', test_path(@question.test_id) %>
 <%= link_to 'Edit', edit_question_path(@question) %>
 
