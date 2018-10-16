@@ -8,10 +8,9 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     unless current_user
+      cookies[:initial_path] = request.fullpath
       redirect_to login_path, alert: 'Are you a Guru? Verufy please'
     end
-
-    cookies[:email] = current_user&.email
   end
 
   def current_user
