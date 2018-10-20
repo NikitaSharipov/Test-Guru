@@ -8,8 +8,6 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :own_tests, class_name: "Test", foreign_key: :user_id, dependent: :nullify
 
-  validates :email, format: { with: /@/ }, uniqueness: true
-
   def test_by_lvl(level_input)
     tests.by_level(level_input)
   end
@@ -20,6 +18,10 @@ class User < ApplicationRecord
 
   def admin?
     self.is_a?(Admin)
+  end
+
+  def full_name
+    self.first_name + ' ' + self.last_name
   end
 
 end
