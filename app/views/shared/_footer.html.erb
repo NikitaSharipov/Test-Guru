@@ -1,4 +1,4 @@
-<p>Текущий год: <%= current_year %> </p>
-<p>Имя автора: Никита Шарипов </p>
-<p>Название проекта: <%= github_link('NikitaSharipov', 'Test-Guru') %></p>
-<p>О проекте: Test Guru дает возможность пользователям находить, проходить и даже самим создавать тесты. Test Guru - это учебный проект в онлайн-школе <a href="http://thinknetica.com" target="_blank">Thinknetica</a> ! </p>
+<p><%=t('.year')%>: <%= current_year %> </p>
+<p><%=t('.author')%> </p>
+<p><%=t('.project_name')%> <%= github_link('NikitaSharipov', 'Test-Guru') %></p>
+<p> <%=t('.project')%> <a href="http://thinknetica.com" target="_blank">Thinknetica</a> ! </p>
