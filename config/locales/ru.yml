@@ -25,6 +25,7 @@ ru:
       logout: "Выход"
       log_in: "Вход"
       sign_up: "Регистрация"
+      admin_panel: "Панель управления"
     footer:
       year: "Текущий год"
       author: "Имя автора: Никита Шарипов"
@@ -81,6 +82,9 @@ ru:
       show:
         back: "Назад"
         new_question: "Новый вопрос"
+    navigation:
+      welcome: "Добро пожаловать"
+      logout: "Выход"
 
   tests_mailer:
     completed_test:
