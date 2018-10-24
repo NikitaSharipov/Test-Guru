@@ -1,5 +1,10 @@
 ru:
   devise:
+    shared:
+      links:
+        forgot_password: "Забыли пароль?"
+        confirmation_instructions_lost: "Не получили email для потверждения?"
+        unlock_instructions_lost: "Не получили инструкции по разблокировке?"
     confirmations:
       confirmed: "Ваша учётная запись подтверждена."
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по подтверждению вашей учётной записи."

@@ -23,6 +23,8 @@ ru:
     navigation:
       welcome: "Добро пожаловать"
       logout: "Выход"
+      log_in: "Вход"
+      sign_up: "Регистрация"
     footer:
       year: "Текущий год"
       author: "Имя автора: Никита Шарипов"

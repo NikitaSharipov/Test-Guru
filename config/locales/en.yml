@@ -52,6 +52,8 @@ en:
     navigation:
       welcome: "Welcome"
       logout: "Logout"
+      log_in: "Log In"
+      sign_up: "Sign Up"
     footer:
       year: "Current year"
       author: "Author name: Nikita Sharipov"
