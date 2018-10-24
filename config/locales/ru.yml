@@ -1,0 +1,85 @@
+ru:
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите категорию"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    navigation:
+      welcome: "Добро пожаловать"
+      logout: "Выход"
+    footer:
+      year: "Текущий год"
+      author: "Имя автора: Никита Шарипов"
+      project_name: "Название проекта"
+      project: "О проекте: Test Guru дает возможность пользователям находить, проходить и даже самим создавать тесты. Test Guru - это учебный проект в онлайн-школе"
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      author: "Автор"
+      question_count: "Количество вопросов"
+    test:
+      start: "Старт"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      success: "Успех"
+      failure: "Неудача"
+      all_tests: "Все Тесты"
+      result: "Результат"
+    show:
+      header: "Прохождение %{title} Теста"
+      question_number: "Номер текущего вопроса"
+      question_count: "Общее количество вопросов теста"
+      correct_question: "Количество правильных ответов на данный момент"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан !"
+      index:
+        header: "Доступные Тесты"
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+        author: "Автор"
+        question_count: "Количество вопросов"
+        action: "Действие"
+        new_test: "Создать новый тест"
+      test:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
+      edit:
+        back: "Назад"
+        title: "Редактировать тест"
+      new:
+        back: "Назад"
+      show:
+        back: "Назад"
+        new_question: "Новый вопрос"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
