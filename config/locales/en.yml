@@ -86,6 +86,9 @@ en:
       question_number: "Сurrent question number"
       question_count: "Total number of test questions"
       correct_question: "The number of correct answers at the moment"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
 
   admin:
     tests:
