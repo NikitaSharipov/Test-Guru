@@ -1,5 +1,4 @@
-<table>
-  <caption><%= t('.header') %></caption>
+<table class="table table-bordered table-hover text-center">
   <tr>
     <th><%= t('.title') %></th>
     <th><%= t('.level') %></th>
@@ -14,5 +13,5 @@
 </table>
 
 <p>
-  <%= link_to t('.new_test'), new_admin_test_path %>
+  <%= link_to t('.new_test'), new_admin_test_path, class: "btn btn-info" %>
 </p>

@@ -52,6 +52,9 @@ en:
     navigation:
       welcome: "Welcome"
       logout: "Logout"
+      log_in: "Log In"
+      sign_up: "Sign Up"
+      admin_panel: "Control panel"
     footer:
       year: "Current year"
       author: "Author name: Nikita Sharipov"
@@ -110,7 +113,9 @@ en:
       show:
         back: "Back"
         new_question: "New question"
-
+    navigation:
+      welcome: "Welcome"
+      logout: "Logout"
 
   tests_mailer:
     completed_test:
