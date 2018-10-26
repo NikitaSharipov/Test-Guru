@@ -10,10 +10,6 @@ class TestPassagesController < ApplicationController
 
   end
 
-  def gist
-
-  end
-
   def update
     @test_passage.accept!(params[:answer_ids])
 
@@ -31,7 +27,7 @@ class TestPassagesController < ApplicationController
     flash_options = if result.success?
       { notice: t('.success') }
     else
-      { alert: t('.falure') }
+      { alert: t('.failure') }
     end
 
     redirect_to @test_passage, flash_options
