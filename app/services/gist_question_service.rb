@@ -6,19 +6,38 @@ class GistQuestionService
     @client = client || client_new
   end
 
-  def call
-    @client.create_gist(gist_params)
+  class ResultObject
+    attr_reader :response
+    attr_accessor :id
+
+    delegate :html_url, to: :response
+
+    def initialize(response)
+      @response = response
+      @id = response.id
+    end
+
+    def success?
+      html_url.present?
+    end
   end
+
+  def call
+    response = @client.create_gist(gist_params)
+    ResultObject.new(response)
+  end
+
 
   private
 
   def client_new
-    Octokit::Client.new(access_token: "a21ab1b11f967337fe8bcde63aee70b251677a0b")
+    Octokit::Client.new(access_token: ENV['SECRET_TOKEN'])
   end
 
   def gist_params
     {
-      description: "A question about #{@test.title} from TestGuru",
+      description: I18n.t('services.gist_question_service.description',
+                          title: @test.title),
       files:  {
         'test-guru-question.txt' => {
           content: gist_content

@@ -1,0 +1,21 @@
+<%= form_with model: [:admin, @gist], local: true do |form| %>
+  <%= render 'shared/errors', resource: @test %>
+
+  <p>
+    <%= form.label :user %>
+    <%= form.text_field :user, id: :gist_user %>
+  </p>
+
+  <p>
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :gist_url %>
+  </p>
+
+  <p>
+    <%= form.label :question %>
+    <%= form.text_field :question, id: :question_url %>
+  </p>
+
+  <p><%= form.submit %></p>
+
+<% end %>
