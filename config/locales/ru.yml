@@ -58,7 +58,7 @@ ru:
     gist:
       success: "Gist успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
-      link: "Ссылка"
+      link: "Ссылка на gist"
 
   admin:
     tests:

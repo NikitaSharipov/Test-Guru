@@ -7,19 +7,22 @@ class GistQuestionService
   end
 
   class ResultObject
-    attr_reader :response
-    attr_reader :id
 
-    delegate :html_url, to: :response
+    attr_reader :id
+    attr_reader :html_url
 
     def initialize(response)
       @response = response
       @id = response.id
+      @html_url = response.html_url
     end
 
     def success?
       @id.present?
     end
+
+    private
+    attr_reader :response
   end
 
   def call

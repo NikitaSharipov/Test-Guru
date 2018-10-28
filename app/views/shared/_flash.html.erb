@@ -1,7 +1,3 @@
 <% flash.each do |key, message| %>
-  <% if key == 'link' %>
-    <p class="alert type_<%= "#{key}" %>"><%= link_to 'Ссылка на Gist', message, :target => "_blank"%></p>
-  <% else %>
-    <%= content_tag :p, message, class: "alert type_#{key}" %>
-  <% end %>
+    <%= content_tag :p, message.html_safe, class: "alert type_#{key}" %>
 <% end %>
