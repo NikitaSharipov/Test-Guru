@@ -87,7 +87,7 @@ en:
       question_count: "Total number of test questions"
       correct_question: "The number of correct answers at the moment"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created %{link}!"
       failure: "An error occurred while saving gist"
       link: "link to gist"
 
