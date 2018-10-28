@@ -89,7 +89,7 @@ en:
     gist:
       success: "Gist was successfully created!"
       failure: "An error occurred while saving gist"
-      link: "Link to gist"
+      link: "link to gist"
 
   admin:
     tests:

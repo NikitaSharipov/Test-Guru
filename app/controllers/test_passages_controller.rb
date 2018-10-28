@@ -2,8 +2,6 @@ class TestPassagesController < ApplicationController
 
   before_action :set_test_passage, only: %i[show update result gist]
 
-  add_flash_types :link
-
   def show
 
   end
@@ -26,9 +24,9 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
     if result.success?
-      flash[:notice] = t('.success', link: view_context.link_to(t('.link'), result.html_url))
+      flash[:notice] = t('.success', link: view_context.link_to(t('.link'), result.html_url, target: "_blank"))
       current_user.gists.create!(question: @test_passage.current_question,
-                                  gist_hash: result.id)
+                                  gist_hash: result.html_url)
     else
       flash[:alert] = t('.failure')
     end

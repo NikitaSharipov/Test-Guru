@@ -56,9 +56,9 @@ ru:
       question_count: "Общее количество вопросов теста"
       correct_question: "Количество правильных ответов на данный момент"
     gist:
-      success: "Gist успешно сохранен!"
+      success: "Gist успешно сохранен %{link}!"
       failure: "Во время сохранения gist произошла ошибка"
-      link: "Ссылка на gist"
+      link: "cсылка на gist"
 
   admin:
     tests:
