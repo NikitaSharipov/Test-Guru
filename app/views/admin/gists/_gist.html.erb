@@ -1,0 +1,5 @@
+<tr>
+  <td><%= gist.user.full_name %></td>
+  <td><%= link_to URI(gist.gist_url).path.delete('/') , "#{gist.gist_url}", target: "_blank"  %></td>
+  <td><%= gist.question.body %></td>
+</tr>

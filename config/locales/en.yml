@@ -86,6 +86,10 @@ en:
       question_number: "Сurrent question number"
       question_count: "Total number of test questions"
       correct_question: "The number of correct answers at the moment"
+    gist:
+      success: "Gist was successfully created %{link}!"
+      failure: "An error occurred while saving gist"
+      link: "link to gist"
 
   admin:
     tests:
@@ -120,3 +124,7 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+  services:
+    gist_question_service:
+      description: 'A question %{title} from TestGuru'

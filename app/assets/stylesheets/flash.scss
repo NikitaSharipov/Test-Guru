@@ -3,6 +3,10 @@
   @extend .alert-info
 }
 
+.type_link {
+  @extend .alert-info
+}
+
 .type_alert {
   @extend .alert-danger;
 }

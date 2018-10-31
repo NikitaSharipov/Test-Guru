@@ -1,0 +1,14 @@
+<table class="table table-bordered table-hover text-center">
+  <tr>
+    <th><%= t('.user') %></th>
+    <th><%= t('.url') %></th>
+    <th><%= t('.question') %></th>
+  </tr>
+
+  <%= render @gists %>
+
+</table>
+
+<p>
+  <%= link_to t('.back'), admin_tests_path, class: "btn btn-info" %>
+</p>

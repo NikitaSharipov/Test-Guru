@@ -1,3 +1,3 @@
 <% flash.each do |key, message| %>
-  <%= content_tag :p, message, class: "alert type_#{key}" %>
+    <%= content_tag :p, message.html_safe, class: "alert type_#{key}" %>
 <% end %>
