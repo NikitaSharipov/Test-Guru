@@ -14,6 +14,14 @@
   <p><%= form.submit 'Next' %></p>
 <% end %>
 
+<div id="myProgress">
+  <%= content_tag :div, id: 'myBar', data: { completed: @test_passage.question_number, amount: @test_passage.questions_count } do %>
+  <% end %>
+</div>
+
+
+
+
 <p> <%= t('.question_number') %>: <%= @test_passage.question_number %> </p>
 <p> <%= t('.question_count') %>: <%= @test_passage.questions_count %> </p>
 <p> <%= t('.correct_question') %>: <%= @test_passage.correct_question %> </p>
