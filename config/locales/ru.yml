@@ -86,6 +86,8 @@ ru:
       show:
         back: "Назад"
         new_question: "Новый вопрос"
+      form_inline:
+        submit: "Ок"
     navigation:
       welcome: "Добро пожаловать"
       logout: "Выход"

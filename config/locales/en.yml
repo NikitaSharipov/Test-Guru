@@ -117,6 +117,8 @@ en:
       show:
         back: "Back"
         new_question: "New question"
+      form_inline:
+        submit: "Ok"
     navigation:
       welcome: "Welcome"
       logout: "Logout"

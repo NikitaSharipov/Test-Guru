@@ -45,11 +45,11 @@ class Admin::AnswersController < ApplicationController
   private
 
   def set_question
-    @question = Question.set(params[:question_id])
+    @question = Question.find(params[:question_id])
   end
     # Use callbacks to share common setup or constraints between actions.
   def set_answer
-      @answer = Answer.set(params[:id])
+      @answer = Answer.find(params[:id])
   end
 
     # Never trust parameters from the scary internet, only allow the white list through.
