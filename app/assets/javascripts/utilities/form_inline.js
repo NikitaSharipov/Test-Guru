@@ -6,13 +6,13 @@ document.addEventListener('turbolinks:load', function() {
 //      controls[i].addEventListener('click', formInlineLinkHandler);
 //    }
 //  }
-  $('.form-inline-link').on('click', formInlineLineHandler)
+  $('.form-inline-link').on('click', formInlineLineHandler);
 
-  var errors = document.querySelector('.resource-errors')
+  var errors = document.querySelector('.resource-errors');
 
   if (errors) {
-    var resourceId = errors.dataset.resourceId
-    formInlineHandler(resourceId)
+    var resourceId = errors.dataset.resourceId;
+    formInlineHandler(resourceId);
   }
 })
 
@@ -26,8 +26,8 @@ function formInlineHandler(testId) {
   var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]');
 //  var testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]');
 //  var formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]');
-  var $testTitle = $('.test-title[data-test-id="' + testId + '"]')
-  var $formInline = $('.form-inline[data-test-id="' + testId + '"]')
+  var $testTitle = $('.test-title[data-test-id="' + testId + '"]');
+  var $formInline = $('.form-inline[data-test-id="' + testId + '"]');
 
 //  if (formInline.classList.contains('hide')) {
 //    testTitle.classList.add('hide');
@@ -37,8 +37,8 @@ function formInlineHandler(testId) {
 //    formInline.classList.add('hide');
 //    link.textContent = 'Редактировать';
 //  }
-  $formInline.toggle()
-  $testTitle.toggle()
+  $formInline.toggle();
+  $testTitle.toggle();
 
   if ($formInline.is(':visible')) {
     link.textContent = 'Отменить';
