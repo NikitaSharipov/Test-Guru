@@ -10,6 +10,9 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      feedback:
+        title: "Название"
+        body: "Сообщение"
     select:
       prompt: "Выберите категорию"
 
@@ -59,6 +62,9 @@ ru:
       success: "Gist успешно сохранен %{link}!"
       failure: "Во время сохранения gist произошла ошибка"
       link: "cсылка на gist"
+  feedbacks:
+    create:
+      success: "Письмо успешно отправлено!"
 
   admin:
     tests:

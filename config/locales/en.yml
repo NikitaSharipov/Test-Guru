@@ -90,6 +90,10 @@ en:
       success: "Gist was successfully created %{link}!"
       failure: "An error occurred while saving gist"
       link: "link to gist"
+    feedbacks:
+      create:
+        success: "Письмо успешно отправлено!"
+
 
   admin:
     tests:
