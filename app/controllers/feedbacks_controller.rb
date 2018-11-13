@@ -8,7 +8,8 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    @feedback = Feedback.new(title: feedback_params[:title], body: feedback_params[:body], email: current_user.email)
+    @feedback = Feedback.new(feedback_params)
+    @feedback.email = current_user.email
     if @feedback.valid?
       FeedbacksMailer.send_feedback(@feedback.title, @feedback.body, @feedback.email ).deliver_now
       redirect_to tests_path, notice: t('.success')
