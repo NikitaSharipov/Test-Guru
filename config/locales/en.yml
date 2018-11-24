@@ -90,9 +90,21 @@ en:
       success: "Gist was successfully created %{link}!"
       failure: "An error occurred while saving gist"
       link: "link to gist"
+    update:
+      awards: "Awards received: %{names}!"
     feedbacks:
       create:
         success: "Письмо успешно отправлено!"
+    badge_receptions:
+      index:
+        title: "Title"
+        img_adress: "Image"
+        rule: "The rule of issuance"
+        rule_value: "The criterion for the issuance"
+        author: "Badge author"
+        user_badges: "User Badges"
+        all_badges: "All badges"
+        back: "Back"
 
 
   admin:
@@ -108,6 +120,8 @@ en:
         question_count: "Question count"
         action: "Action"
         new_test: "Create new test"
+        gist: "Gists"
+        badge: "Badges"
       test:
         show: "Show"
         edit: "Edit"
@@ -126,6 +140,33 @@ en:
     navigation:
       welcome: "Welcome"
       logout: "Logout"
+    badges:
+      index:
+        title: "Title"
+        img_adress: "Image"
+        rule: "The rule of issuance"
+        rule_value: "The criterion for the issuance"
+        author: "Badge author"
+        action: "Action"
+        new_badge: "New badge"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        delete_confirmation: "Are you sure?"
+      edit:
+        back: "Back"
+        title: "Edit test"
+      new:
+        create: "Create new test"
+        back: "Back"
+      show:
+        back: "Back"
+        edit: "Edit"
+      create:
+        success: "Badge was successfully created"
+
+
 
   tests_mailer:
     completed_test:

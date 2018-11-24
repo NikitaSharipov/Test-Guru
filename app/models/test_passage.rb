@@ -5,6 +5,9 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_next_question
 
+#  scope :by_category, -> (category, user) { joins(:test).where(tests: {category: category}).where(user: user) }
+#  scope :by_level, -> (level, user) { joins(:test).where(tests: {level: level}).where(user: user) }
+
   def completed?
     current_question.nil?
   end

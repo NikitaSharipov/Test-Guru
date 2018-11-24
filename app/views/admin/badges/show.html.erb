@@ -1,0 +1,16 @@
+<h2>Test</h2>
+<p>
+  <strong>Title: </strong>
+  <%= @badge.title %><br>
+  <strong>Rule: </strong>
+  <%= @badge.rule %><br>
+  <strong>Rule Value: </strong>
+  <%= @badge.rule_value %><br>
+  <strong>Badge Author: </strong>
+  <%= @badge.author.full_name %><br>
+</p>
+
+<p>
+  <%= link_to t('.back'), admin_badges_path %>
+  <%= link_to t('.edit'), edit_admin_badge_path(@badge) %>
+</p>
