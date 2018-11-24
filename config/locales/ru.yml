@@ -10,6 +10,9 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      feedback:
+        title: "Название"
+        body: "Сообщение"
     select:
       prompt: "Выберите категорию"
 
@@ -40,6 +43,8 @@ ru:
       category: "Категория"
       author: "Автор"
       question_count: "Количество вопросов"
+      feedback_form: "Форма фидбека"
+      badges: "Бейджи"
     test:
       start: "Старт"
 
@@ -59,6 +64,21 @@ ru:
       success: "Gist успешно сохранен %{link}!"
       failure: "Во время сохранения gist произошла ошибка"
       link: "cсылка на gist"
+    update:
+      awards: "Получены награды: %{names}!"
+  feedbacks:
+    create:
+      success: "Письмо успешно отправлено!"
+  badge_receptions:
+    index:
+      title: "Название"
+      img_address: "Картинка"
+      rule: "Правило выдачи"
+      rule_value: "Критерий выдачи"
+      author: "Автор бейджа"
+      user_badges: "Полученные бейджи"
+      all_badges: "Все бейджи"
+      back: "Назад"
 
   admin:
     tests:
@@ -73,6 +93,8 @@ ru:
         question_count: "Количество вопросов"
         action: "Действие"
         new_test: "Создать новый тест"
+        gist: "Гисты"
+        badge: "Бейджи"
       test:
         show: "Показать"
         edit: "Редактировать"
@@ -91,6 +113,32 @@ ru:
     navigation:
       welcome: "Добро пожаловать"
       logout: "Выход"
+    badges:
+      index:
+        title: "Название"
+        img_adress: "Картинка"
+        rule: "Правило выдачи"
+        rule_value: "Критерий выдачи"
+        author: "Автор бейджа"
+        action: "Действие"
+        new_badge: "Новый бейдж"
+      badge:
+        show: "Показать"
+        edit: "Редактировать"
+        delete: "Удалить"
+        delete_confirmation: "Вы уверены?"
+      edit:
+        back: "Назад"
+        title: "Редактировать тест"
+      new:
+        create: "Создание нового бейджа"
+        back: "Назад"
+      show:
+        back: "Назад"
+        edit: "Редактировать"
+      create:
+        success: "Бейдж успешно создан"
+
 
   tests_mailer:
     completed_test:

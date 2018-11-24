@@ -12,9 +12,17 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
-
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
+#Бэджи
+      current_badges = BadgeRewardService.new(@test_passage).call
+
+      if current_badges.present?
+        current_user.badges.push(current_badges)
+        names = current_badges.map(&:title).join(', ')
+        flash[:notice] = t('.awards', names: names)
+      end
+#Бэджи конец
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

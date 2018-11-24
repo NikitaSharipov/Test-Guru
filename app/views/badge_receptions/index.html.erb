@@ -1,0 +1,29 @@
+<h2> <%= t('.user_badges') %></h2>
+<table class="table table-bordered table-hover text-center">
+  <tr>
+    <th><%= t('.title') %></th>
+    <th><%= t('.img_address') %></th>
+    <th><%= t('.rule') %></th>
+    <th><%= t('.rule_value') %></th>
+  </tr>
+
+  <%= render @badge_receptions %>
+
+</table>
+
+<h2> <%= t('.all_badges') %></h2>
+<table class="table table-bordered table-hover text-center">
+  <tr>
+    <th><%= t('.title') %></th>
+    <th><%= t('.img_address') %></th>
+    <th><%= t('.rule') %></th>
+    <th><%= t('.rule_value') %></th>
+  </tr>
+
+  <%= render @badges %>
+
+</table>
+
+<p>
+  <%= link_to t('.back'), tests_path, class: "btn btn-info" %>
+</p>

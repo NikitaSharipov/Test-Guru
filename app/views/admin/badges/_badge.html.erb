@@ -1,0 +1,15 @@
+<tr>
+  <td class="align-middle">
+    <%= badge.title %>
+  </td>
+  <td class="align-middle"><img src=<%= badge.img_address %> height="30" width="30"></td>
+  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle"><%= badge.rule_value %></td>
+  <td class="align-middle"><%= badge.author.full_name %></td>
+  <td class="align-middle"><%= link_to t('.show'), admin_badge_path(badge) %></td>
+  <td class="align-middle">
+    <%= link_to t('.edit'), edit_admin_badge_path(badge), data: {bagde_id: badge.id } %>
+  </td>
+  <td class="align-middle"><%= link_to t('.delete'), admin_badge_path(badge), method: :delete,
+            data: { confirm: t('.delete_confirmation')} %></td>
+</tr>
