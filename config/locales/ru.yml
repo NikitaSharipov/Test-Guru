@@ -45,6 +45,7 @@ ru:
       question_count: "Количество вопросов"
       feedback_form: "Форма фидбека"
       badges: "Бейджи"
+      passage_time: "Время прохождения"
     test:
       start: "Старт"
 
@@ -95,6 +96,7 @@ ru:
         new_test: "Создать новый тест"
         gist: "Гисты"
         badge: "Бейджи"
+        passage_time: "Время прохождения"
       test:
         show: "Показать"
         edit: "Редактировать"

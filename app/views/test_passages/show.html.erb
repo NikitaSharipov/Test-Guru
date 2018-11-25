@@ -14,6 +14,13 @@
   <p><%= form.submit 'Next' %></p>
 <% end %>
 
+<% if @test_passage.test.has_timer?  %>
+  <%= content_tag :p, class: "timer",
+                  data: { passage_time: @test_passage.time_left } do %>
+    <p id='demo'></p>
+  <% end %>
+<% end %>
+
 <div id="myProgress">
   <%= content_tag :div, id: 'myBar', data: { completed: @test_passage.question_number, amount: @test_passage.questions_count } do %>
   <% end %>

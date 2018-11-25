@@ -4,7 +4,6 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_next_question
-
 #  scope :by_category, -> (category, user) { joins(:test).where(tests: {category: category}).where(user: user) }
 #  scope :by_level, -> (level, user) { joins(:test).where(tests: {level: level}).where(user: user) }
 
@@ -13,7 +12,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_question += 1 if correct_answer?(answer_ids)
+    self.correct_question += 1 if correct_answer?(answer_ids) && time_not_over?
     save!
   end
 
@@ -31,6 +30,30 @@ class TestPassage < ApplicationRecord
 
   def question_number
     questions_count - further_questions.size
+  end
+
+  def timer?
+    self.test.has_timer?
+  end
+
+  def time_over?
+    if timer?
+      Time.now > end_time
+    else
+      false
+    end
+  end
+
+  def time_not_over?
+    if timer?
+      Time.now < end_time
+    else
+      true
+    end
+  end
+
+  def time_left
+    end_time - Time.now
   end
 
   private
@@ -61,5 +84,9 @@ class TestPassage < ApplicationRecord
 
   def further_questions
     test.questions.order(:id).where('id > ?', current_question.id)
+  end
+
+  def end_time
+    @end_time ||= self.created_at + test.passage_time.minutes
   end
 end
