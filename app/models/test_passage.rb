@@ -4,9 +4,10 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_next_question
+  before_save :chose_successful
 
-#  scope :by_category, -> (category, user) { joins(:test).where(tests: {category: category}).where(user: user) }
-#  scope :by_level, -> (level, user) { joins(:test).where(tests: {level: level}).where(user: user) }
+  scope :by_category, -> (category) { joins(:test).where(tests: {category: category}) }
+  scope :by_level, -> (level) { joins(:test).where(tests: {level: level}) }
 
   def completed?
     current_question.nil?
@@ -62,4 +63,9 @@ class TestPassage < ApplicationRecord
   def further_questions
     test.questions.order(:id).where('id > ?', current_question.id)
   end
+
+  def chose_successful
+    self.success = completed? && success?
+  end
+
 end

@@ -29,7 +29,11 @@ class User < ApplicationRecord
   end
 
   def has_badge?(badge)
-    self.badges.include?(badge)
+    self.badges.exists?(badge.id)
+  end
+
+  def has_not_badge?(badge)
+    !has_badge?(badge)
   end
 
 end
