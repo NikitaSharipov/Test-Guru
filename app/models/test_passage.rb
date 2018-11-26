@@ -12,7 +12,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_question += 1 if correct_answer?(answer_ids) && time_not_over?
+    self.correct_question += 1 if correct_answer?(answer_ids)
     save!
   end
 
@@ -33,27 +33,15 @@ class TestPassage < ApplicationRecord
   end
 
   def timer?
-    self.test.has_timer?
+    self.test.timer?
   end
 
   def time_over?
-    if timer?
-      Time.now > end_time
-    else
-      false
-    end
-  end
-
-  def time_not_over?
-    if timer?
-      Time.now < end_time
-    else
-      true
-    end
+    timer? && Time.current > end_time
   end
 
   def time_left
-    end_time - Time.now
+    end_time - Time.current
   end
 
   private

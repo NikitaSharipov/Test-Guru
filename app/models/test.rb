@@ -15,7 +15,7 @@ class Test < ApplicationRecord
   scope :hard, -> { by_level(4..Float::INFINITY) }
   scope :by_category, -> (category) { joins(:category).where(categories: {title: category}) }
 
-  def has_timer?
+  def timer?
     self.passage_time.present?
   end
 

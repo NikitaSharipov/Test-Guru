@@ -3,7 +3,7 @@
   <b><%= @test_passage.current_question.body %></b>
 </p>
 
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form_with url: test_passage_path(@test_passage), local: true, id: "theForm", method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
   <p>
     <%= b.check_box id: "answer_ids_#{b.object.id}" %>
@@ -14,7 +14,7 @@
   <p><%= form.submit 'Next' %></p>
 <% end %>
 
-<% if @test_passage.test.has_timer?  %>
+<% if @test_passage.test.timer?  %>
   <%= content_tag :p, class: "timer",
                   data: { passage_time: @test_passage.time_left } do %>
     <p id='demo'></p>
