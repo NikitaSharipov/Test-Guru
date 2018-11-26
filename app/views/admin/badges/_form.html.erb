@@ -12,8 +12,8 @@
   </p>
 
   <p>
-    <%= form.label :rule_value %>
-    <%= form.collection_select :rule, Badge.all, :rule, :rule, prompt: true %>
+    <%= form.label :rule %>
+    <%= form.select :rule, rules %>
   </p>
 
   <p>

@@ -6,48 +6,37 @@ class BadgeRewardService
   end
 
   def call
-    badges = []
-    Badge.select do |badge|
-      case badge.rule
-      when 'by_level'
-        by_level?(badge)
-      when 'first'
-        first?
-      when 'by_category'
-        by_category?(badge)
-      end
+    Badge.all.select do |badge|
+    method_name = "#{badge.rule}?"
+    send(method_name, badge)
     end
   end
 
-  def first?
+  def first?(badge)
     @test_passage.success? && TestPassage.where(user: @user, test: @test).count == 1
   end
 
   def by_category?(badge)
-    category_object = Category.where(title: badge.rule_value)
-    (Test.where(category: category_object).count == success_by_category(category_object)) && @user.has_not_badge?(badge)
+    Test.by_category(badge.rule_value).count == success_by_category(badge)
   end
 
   def by_level?(badge)
-    (Test.where(level: badge.rule_value).count == successful_by_level(badge.rule_value)) && @user.has_not_badge?(badge)
+
+    Test.where(level: badge.rule_value).count == successful_by_level(badge)
   end
 
-  def successful_by_level(level)
-    @user.test_passages.by_level(level).where(success: true).count
+  def successful_by_level(badge)
+    elem = @user.test_passages.by_level(badge.rule_value).successful
+    success_count(elem, badge)
   end
 
-  def success_by_category(category_object)
-    @user.test_passages.by_category(category_object).where(success: true).count
+  def success_by_category(badge)
+    elem = @user.test_passages.by_category(badge.rule_value).successful
+    success_count(elem, badge)
+  end
+
+  def success_count(elem, badge)
+    elem.group(:test).count.select { |k,v| v > @user.badges_count(badge)}.count
   end
 
 end
-
- # def successful_by_level(level)
- #   successful_pass = 0
- #   @user.tests.where(level: level).each do |test_by_level|
- #     test_by_level.test_passages.each do |test_passage|
- #       successful_pass += 1 if test_passage.success?
- #     end
- #   end
- #   successful_pass
- # end

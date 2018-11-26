@@ -1,4 +1,7 @@
 class Badge < ApplicationRecord
+
+  RULES = %w[first by_category by_level]
+
   validates :title, :img_address, presence: true
 
   has_many :badge_reception, dependent: :destroy
