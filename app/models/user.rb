@@ -39,8 +39,4 @@ class User < ApplicationRecord
   def badges_count(badge)
     self.badges.where(rule: badge.rule, rule_value: badge.rule_value).all.count
   end
-
-  def t
-    1
-  end
 end
