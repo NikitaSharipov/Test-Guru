@@ -7,8 +7,8 @@ class BadgeRewardService
 
   def call
     Badge.all.select do |badge|
-    method_name = "#{badge.rule}?"
-    send(method_name, badge)
+      method_name = "#{badge.rule}?"
+      send(method_name, badge)
     end
   end
 
@@ -26,17 +26,17 @@ class BadgeRewardService
   end
 
   def successful_by_level(badge)
-    elem = @user.test_passages.by_level(badge.rule_value).successful
-    success_count(elem, badge)
+    test_passage = @user.test_passages.by_level(badge.rule_value).successful
+    success_count(test_passage, badge)
   end
 
   def success_by_category(badge)
-    elem = @user.test_passages.by_category(badge.rule_value).successful
-    success_count(elem, badge)
+    test_passage = @user.test_passages.by_category(badge.rule_value).successful
+    success_count(test_passage, badge)
   end
 
-  def success_count(elem, badge)
-    elem.group(:test).count.select { |k,v| v > @user.badges_count(badge)}.count
+  def success_count(test_passage, badge)
+    test_passage.group(:test).count.select { |k,v| v > @user.badges_count(badge)}.count
   end
 
 end
