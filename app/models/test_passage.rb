@@ -4,11 +4,13 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :before_validation_next_question
+
   before_save :set_successful
 
   scope :by_category, -> (category) { joins(:test).where(tests: {category: Category.where(title: category)}) }
   scope :by_level, -> (level) { joins(:test).where(tests: {level: level}) }
   scope :successful, -> { where(success: true) }
+
 
   def completed?
     current_question.nil?
@@ -33,6 +35,18 @@ class TestPassage < ApplicationRecord
 
   def question_number
     questions_count - further_questions.size
+  end
+
+  def timer?
+    self.test.timer?
+  end
+
+  def time_over?
+    timer? && Time.current > end_time
+  end
+
+  def time_left
+    end_time - Time.current
   end
 
   private
@@ -63,6 +77,11 @@ class TestPassage < ApplicationRecord
 
   def further_questions
     test.questions.order(:id).where('id > ?', current_question.id)
+  end
+
+
+  def end_time
+    @end_time ||= self.created_at + test.passage_time.minutes
   end
 
   def set_successful

@@ -70,6 +70,7 @@ en:
       category: "Category"
       author: "Author"
       question_count: "Queston count"
+      passage_time: "Passage_time"
     test:
       start: "Start"
 
@@ -122,6 +123,7 @@ en:
         new_test: "Create new test"
         gist: "Gists"
         badge: "Badges"
+        passage_time: "Passage_time"
       test:
         show: "Show"
         edit: "Edit"
