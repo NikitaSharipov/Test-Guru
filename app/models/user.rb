@@ -29,7 +29,14 @@ class User < ApplicationRecord
   end
 
   def has_badge?(badge)
-    self.badges.include?(badge)
+    self.badges.exists?(badge.id)
   end
 
+  def has_no_badge?(badge)
+    !has_badge?(badge)
+  end
+
+  def badges_count(badge)
+    self.badges.where(rule: badge.rule, rule_value: badge.rule_value).all.count
+  end
 end
